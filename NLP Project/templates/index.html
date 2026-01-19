@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NLP Flask Project</title>
+</head>
+<body>
+    <h1>NLP Analysis</h1>
+    <form method="POST">
+        <label>Enter Sentence:</label>
+        <input type="text" name="sentence" required>
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if result %}
+    <h2>Results:</h2>
+    <p><strong>Original:</strong> {{ result.original }}</p>
+    <p><strong>Cleaned:</strong> {{ result.cleaned }}</p>
+    <p><strong>Tokens:</strong> {{ result.tokens }}</p>
+    <p><strong>Normalized:</strong> {{ result.normalized }}</p>
+    <p><strong>POS Tags:</strong> {{ result.pos_tags }}</p>
+    <p><strong>Dependency Parsing:</strong> {{ result.dependency }}</p>
+    <p><strong>Named Entities:</strong> {{ result.named_entities }}</p>
+    <p><strong>Lemmas:</strong> {{ result.lemmas }}</p>
+    <p><strong>TF-IDF Vector:</strong> {{ result.vector }}</p>
+    <p><strong>Prediction:</strong> {{ result.prediction }}</p>
+    {% endif %}
+</body>
+</html>
